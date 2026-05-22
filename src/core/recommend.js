@@ -29,8 +29,8 @@ export function recommendApp(record, options = {}) {
   const startup = hasEnabledStartup(app);
 
   if (unusedDays === null && app.usage.launchCount30d === 0 && app.usage.foregroundSeconds30d === 0) {
-    score += 45;
-    reasons.push("No recorded foreground use.");
+    score += 20;
+    reasons.push("No usage history available.");
   } else if (unusedDays !== null && unusedDays >= 90) {
     score += 42;
     reasons.push(`Not used for ${unusedDays} days.`);

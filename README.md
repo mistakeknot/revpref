@@ -30,6 +30,7 @@ Run the prototype:
 ```bash
 npm test
 npm run recommend
+npm run collect:windows -- --output windows-apps.json
 ```
 
 ## Task Tracking
@@ -53,6 +54,7 @@ bd show <issue-id>
 - [PRD](docs/PRD.md)
 - [Roadmap](docs/roadmap.md)
 - [Personas](docs/canon/personas.md)
+- [Windows Inventory Collector](docs/guides/windows-inventory.md)
 
 ## Product Thesis
 

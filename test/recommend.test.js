@@ -60,6 +60,24 @@ test("does not recommend system apps", () => {
   assert.equal(recommendation.action, ACTION.KEEP);
 });
 
+test("treats unknown usage on startup apps as startup review first", () => {
+  const recommendation = recommendApp({
+    id: "unknown.startup",
+    name: "Unknown Startup App",
+    sizeBytes: 0,
+    startupEntries: [{ name: "Unknown Startup App", enabled: true }],
+    usage: {
+      lastForegroundAt: null,
+      foregroundSeconds30d: 0,
+      launchCount30d: 0,
+      backgroundSeconds30d: 0
+    }
+  }, { now });
+
+  assert.equal(recommendation.action, ACTION.REVIEW_STARTUP);
+  assert.ok(recommendation.reasons.includes("No usage history available."));
+});
+
 test("discounts frequently used apps even if they start with the OS", () => {
   const recommendation = recommendApp({
     id: "daily.chat",

@@ -5,7 +5,9 @@
   "description": "Revealed preferences for your apps.",
   "type": "module",
   "scripts": {
-    "recommend": "node src/cli.js fixtures/sample-apps.json",
+    "collect:windows": "node src/cli.js collect windows",
+    "collect:windows:recommend": "node src/cli.js collect windows --recommend",
+    "recommend": "node src/cli.js recommend fixtures/sample-apps.json",
     "test": "node --test"
   },
   "keywords": [

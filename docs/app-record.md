@@ -14,11 +14,18 @@ The current prototype uses plain JSON records.
   "sizeBytes": 2147483648,
   "isSystem": false,
   "isUserProtected": false,
+  "identifiers": {
+    "registryKey": "Example",
+    "wingetId": "Example.ExampleApp",
+    "packageFamilyName": null
+  },
   "startupEntries": [
     {
       "name": "Example App",
       "type": "run-key",
-      "enabled": true
+      "enabled": true,
+      "source": "HKCU:/Software/Microsoft/Windows/CurrentVersion/Run",
+      "command": "C:/Program Files/Example/example.exe"
     }
   ],
   "usage": {
@@ -34,6 +41,9 @@ The current prototype uses plain JSON records.
   "uninstall": {
     "kind": "handoff",
     "command": "example-uninstaller.exe"
+  },
+  "metadata": {
+    "displayVersion": "1.2.3"
   }
 }
 ```
@@ -49,6 +59,20 @@ Stable app identity is hard. The MVP uses `id`, but real collectors should prese
 - App Store ID.
 - Install path.
 - Executable path.
+
+## Collector Commands
+
+Windows inventory can be collected with:
+
+```bash
+npm run collect:windows -- --output windows-apps.json
+```
+
+Optional flags:
+
+- `--include-msix` includes MSIX/AppX packages.
+- `--include-winget` tries to enrich records with WinGet package IDs.
+- `--recommend` prints recommendations directly instead of JSON records.
 
 ## Recommendation Safety
 

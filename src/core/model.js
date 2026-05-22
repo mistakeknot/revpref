@@ -31,6 +31,7 @@ export function normalizeAppRecord(record) {
     sizeBytes: Number.isFinite(record.sizeBytes) ? record.sizeBytes : 0,
     isSystem: Boolean(record.isSystem),
     isUserProtected: Boolean(record.isUserProtected),
+    identifiers: normalizeObject(record.identifiers),
     startupEntries: Array.isArray(record.startupEntries) ? record.startupEntries : [],
     usage: {
       lastForegroundAt: record.usage?.lastForegroundAt ?? null,
@@ -42,7 +43,8 @@ export function normalizeAppRecord(record) {
       uploadBytes7d: finiteNumber(record.resourceUsage?.uploadBytes7d),
       downloadBytes7d: finiteNumber(record.resourceUsage?.downloadBytes7d)
     },
-    uninstall: record.uninstall ?? null
+    uninstall: record.uninstall ?? null,
+    metadata: normalizeObject(record.metadata)
   };
 }
 
@@ -83,4 +85,8 @@ export function hasEnabledStartup(app) {
 
 function finiteNumber(value) {
   return Number.isFinite(value) ? value : 0;
+}
+
+function normalizeObject(value) {
+  return value && typeof value === "object" && !Array.isArray(value) ? value : {};
 }
