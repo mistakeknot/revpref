@@ -1,0 +1,86 @@
+[
+  {
+    "id": "ea.desktop",
+    "name": "EA App",
+    "platform": "windows",
+    "source": "registry",
+    "vendor": "Electronic Arts",
+    "installedAt": "2025-05-01T00:00:00.000Z",
+    "sizeBytes": 2147483648,
+    "isSystem": false,
+    "isUserProtected": false,
+    "startupEntries": [
+      {
+        "name": "EADM",
+        "type": "run-key",
+        "enabled": true
+      }
+    ],
+    "usage": {
+      "lastForegroundAt": "2026-01-12T00:00:00.000Z",
+      "foregroundSeconds30d": 0,
+      "launchCount30d": 0,
+      "backgroundSeconds30d": 18000
+    }
+  },
+  {
+    "id": "discord.desktop",
+    "name": "Discord",
+    "platform": "windows",
+    "source": "registry",
+    "vendor": "Discord Inc.",
+    "installedAt": "2024-09-01T00:00:00.000Z",
+    "sizeBytes": 734003200,
+    "isSystem": false,
+    "isUserProtected": false,
+    "startupEntries": [
+      {
+        "name": "Discord",
+        "type": "run-key",
+        "enabled": true
+      }
+    ],
+    "usage": {
+      "lastForegroundAt": "2026-05-22T00:00:00.000Z",
+      "foregroundSeconds30d": 70000,
+      "launchCount30d": 23,
+      "backgroundSeconds30d": 150000
+    }
+  },
+  {
+    "id": "microsoft.edge",
+    "name": "Microsoft Edge",
+    "platform": "windows",
+    "source": "system",
+    "vendor": "Microsoft",
+    "installedAt": "2025-01-01T00:00:00.000Z",
+    "sizeBytes": 1048576000,
+    "isSystem": true,
+    "isUserProtected": false,
+    "startupEntries": [],
+    "usage": {
+      "lastForegroundAt": null,
+      "foregroundSeconds30d": 0,
+      "launchCount30d": 0,
+      "backgroundSeconds30d": 0
+    }
+  },
+  {
+    "id": "big.video.editor",
+    "name": "Big Video Editor",
+    "platform": "macos",
+    "source": "bundle",
+    "vendor": "Example Studio",
+    "installedAt": "2024-10-01T00:00:00.000Z",
+    "sizeBytes": 25769803776,
+    "isSystem": false,
+    "isUserProtected": false,
+    "startupEntries": [],
+    "usage": {
+      "lastForegroundAt": "2025-11-10T00:00:00.000Z",
+      "foregroundSeconds30d": 0,
+      "launchCount30d": 0,
+      "backgroundSeconds30d": 0
+    }
+  }
+]
