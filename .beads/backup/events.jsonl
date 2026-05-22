@@ -21,3 +21,9 @@
 {"actor":"jawnbrown","comment":null,"created_at":"2026-05-22T13:25:00Z","event_type":"created","id":"b0af4137-703b-473b-a699-aad3c1cc57eb","issue_id":"revpref-p2n","new_value":"","old_value":""}
 {"actor":"jawnbrown","comment":"Added label: research","created_at":"2026-05-22T13:25:00Z","event_type":"label_added","id":"cae676ab-5d97-40c0-bd8e-387bae7b5c3a","issue_id":"revpref-p2n","new_value":null,"old_value":null}
 {"actor":"jawnbrown","comment":"Added label: collector","created_at":"2026-05-22T13:25:00Z","event_type":"label_added","id":"fc29bf50-c04c-4bfa-8d91-439c957e5897","issue_id":"revpref-p2n","new_value":null,"old_value":null}
+{"actor":"jawnbrown","comment":"Added label: onboarding","created_at":"2026-05-22T13:55:38Z","event_type":"label_added","id":"2972f5b1-d338-45ac-bead-812a69182573","issue_id":"revpref-guc","new_value":null,"old_value":null}
+{"actor":"jawnbrown","comment":null,"created_at":"2026-05-22T13:55:38Z","event_type":"created","id":"482d2667-f4d8-4486-a871-bca1b1c801b0","issue_id":"revpref-guc","new_value":"","old_value":""}
+{"actor":"jawnbrown","comment":"Added label: personas","created_at":"2026-05-22T13:55:38Z","event_type":"label_added","id":"bb94741a-a9a4-4b2d-94f7-5545dd55856d","issue_id":"revpref-guc","new_value":null,"old_value":null}
+{"actor":"jawnbrown","comment":"Added label: onboarding","created_at":"2026-05-22T13:55:39Z","event_type":"label_added","id":"05b7d141-9e7b-45a4-81ac-65e44175ee4f","issue_id":"revpref-ueg","new_value":null,"old_value":null}
+{"actor":"jawnbrown","comment":null,"created_at":"2026-05-22T13:55:39Z","event_type":"created","id":"395cecb2-c5fa-4fbd-87aa-5db4f40f5579","issue_id":"revpref-ueg","new_value":"","old_value":""}
+{"actor":"jawnbrown","comment":"Added label: docs","created_at":"2026-05-22T13:55:39Z","event_type":"label_added","id":"c0f49129-2a22-438c-9a68-cfac85223e6b","issue_id":"revpref-ueg","new_value":null,"old_value":null}

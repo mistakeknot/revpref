@@ -4,12 +4,16 @@
 {"issue_id":"revpref-anl","label":"import"}
 {"issue_id":"revpref-anl","label":"mvp"}
 {"issue_id":"revpref-anl","label":"usage"}
+{"issue_id":"revpref-guc","label":"onboarding"}
+{"issue_id":"revpref-guc","label":"personas"}
 {"issue_id":"revpref-p2n","label":"collector"}
 {"issue_id":"revpref-p2n","label":"macos"}
 {"issue_id":"revpref-p2n","label":"research"}
 {"issue_id":"revpref-rmm","label":"design"}
 {"issue_id":"revpref-rmm","label":"mvp"}
 {"issue_id":"revpref-rmm","label":"ui"}
+{"issue_id":"revpref-ueg","label":"docs"}
+{"issue_id":"revpref-ueg","label":"onboarding"}
 {"issue_id":"revpref-uko","label":"collector"}
 {"issue_id":"revpref-uko","label":"mvp"}
 {"issue_id":"revpref-uko","label":"windows"}
