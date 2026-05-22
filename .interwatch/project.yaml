@@ -1,0 +1,7 @@
+# Project configuration - created by /clavain:project-onboard
+# Scripts read this for project-level settings.
+
+project: RevPref
+
+roadmap:
+  scan_dirs: []

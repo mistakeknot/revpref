@@ -44,6 +44,16 @@ bd list
 bd show <issue-id>
 ```
 
+## Project Docs
+
+- [Mission](MISSION.md)
+- [Philosophy](PHILOSOPHY.md)
+- [Conventions](CONVENTIONS.md)
+- [Vision](docs/revpref-vision.md)
+- [PRD](docs/PRD.md)
+- [Roadmap](docs/roadmap.md)
+- [Personas](docs/canon/personas.md)
+
 ## Product Thesis
 
 People are bad at remembering what they use. RevPref looks at revealed behavior instead:
