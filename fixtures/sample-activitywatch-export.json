@@ -1,0 +1,59 @@
+{
+  "buckets": {
+    "aw-watcher-window_mistakenot": {
+      "id": "aw-watcher-window_mistakenot",
+      "type": "currentwindow",
+      "client": "aw-watcher-window",
+      "hostname": "mistakenot",
+      "events": [
+        {
+          "timestamp": "2026-05-22T10:00:00.000Z",
+          "duration": 1800,
+          "data": {
+            "app": "Discord",
+            "title": "Friends"
+          }
+        },
+        {
+          "timestamp": "2026-05-22T10:45:00.000Z",
+          "duration": 900,
+          "data": {
+            "app": "Discord",
+            "title": "Voice"
+          }
+        },
+        {
+          "timestamp": "2026-05-21T12:00:00.000Z",
+          "duration": 3600,
+          "data": {
+            "app": "Big Video Editor",
+            "title": "Render Queue"
+          }
+        },
+        {
+          "timestamp": "2026-03-01T12:00:00.000Z",
+          "duration": 600,
+          "data": {
+            "app": "EA App",
+            "title": "Launcher"
+          }
+        }
+      ]
+    },
+    "aw-watcher-afk_mistakenot": {
+      "id": "aw-watcher-afk_mistakenot",
+      "type": "afkstatus",
+      "client": "aw-watcher-afk",
+      "hostname": "mistakenot",
+      "events": [
+        {
+          "timestamp": "2026-05-22T10:00:00.000Z",
+          "duration": 1800,
+          "data": {
+            "status": "not-afk"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -31,6 +31,7 @@ Run the prototype:
 npm test
 npm run recommend
 npm run collect:windows -- --output windows-apps.json
+npm run import:activitywatch -- activitywatch-export.json --apps windows-apps.json --output windows-apps-with-usage.json
 ```
 
 ## Task Tracking
@@ -55,6 +56,7 @@ bd show <issue-id>
 - [Roadmap](docs/roadmap.md)
 - [Personas](docs/canon/personas.md)
 - [Windows Inventory Collector](docs/guides/windows-inventory.md)
+- [ActivityWatch Import](docs/guides/activitywatch-import.md)
 
 ## Product Thesis
 

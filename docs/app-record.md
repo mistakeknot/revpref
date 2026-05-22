@@ -74,6 +74,12 @@ Optional flags:
 - `--include-winget` tries to enrich records with WinGet package IDs.
 - `--recommend` prints recommendations directly instead of JSON records.
 
+ActivityWatch usage can be merged into app records with:
+
+```bash
+npm run import:activitywatch -- activitywatch-export.json --apps windows-apps.json --output windows-apps-with-usage.json
+```
+
 ## Recommendation Safety
 
 Set `isSystem` for operating-system components and drivers. Set `isUserProtected` when a user marks an app as "keep." Both should strongly suppress uninstall suggestions.

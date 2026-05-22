@@ -7,6 +7,7 @@
   "scripts": {
     "collect:windows": "node src/cli.js collect windows",
     "collect:windows:recommend": "node src/cli.js collect windows --recommend",
+    "import:activitywatch": "node src/cli.js import activitywatch",
     "recommend": "node src/cli.js recommend fixtures/sample-apps.json",
     "test": "node --test"
   },

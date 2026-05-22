@@ -3,6 +3,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 import { collectWindowsInventory } from "./collectors/windows/collect.js";
 import { recommendApps } from "./core/recommend.js";
+import { aggregateActivityWatchUsage, mergeActivityWatchUsage } from "./importers/activitywatch.js";
 
 const args = process.argv.slice(2);
 
@@ -13,6 +14,8 @@ if (args.length === 0 || args.includes("--help") || args.includes("-h")) {
 
 if (args[0] === "collect") {
   await runCollect(args.slice(1));
+} else if (args[0] === "import") {
+  await runImport(args.slice(1));
 } else {
   const inputPath = args[0] === "recommend" ? args[1] : args[0];
   if (!inputPath) {
@@ -22,6 +25,40 @@ if (args[0] === "collect") {
 
   const records = JSON.parse(await readFile(inputPath, "utf8"));
   printRecommendations(recommendApps(records));
+}
+
+async function runImport(args) {
+  const source = args[0];
+  if (source !== "activitywatch") {
+    console.error("Only `import activitywatch` is implemented.");
+    process.exit(1);
+  }
+
+  const inputPath = args[1];
+  if (!inputPath) {
+    printUsage();
+    process.exit(1);
+  }
+
+  const options = parseActivityWatchImportArgs(args.slice(2));
+  const activityWatchData = JSON.parse(await readFile(inputPath, "utf8"));
+
+  if (!options.appRecordsPath) {
+    const summaries = aggregateActivityWatchUsage(activityWatchData, options);
+    await writeJsonOrStdout(summaries, options.outputPath);
+    return;
+  }
+
+  const appRecords = JSON.parse(await readFile(options.appRecordsPath, "utf8"));
+  const result = mergeActivityWatchUsage(appRecords, activityWatchData, options);
+  console.error(`Imported ActivityWatch usage: ${result.matchedApps} apps matched across ${result.matchedRecords} records; ${result.unmatchedSummaries.length} unmatched apps.`);
+
+  if (options.recommend) {
+    printRecommendations(recommendApps(result.records));
+    return;
+  }
+
+  await writeJsonOrStdout(result.records, options.outputPath);
 }
 
 async function runCollect(args) {
@@ -43,6 +80,60 @@ async function runCollect(args) {
   if (options.outputPath) {
     await writeFile(options.outputPath, json);
     console.error(`Wrote ${records.length} app records to ${options.outputPath}`);
+  } else {
+    process.stdout.write(json);
+  }
+}
+
+function parseActivityWatchImportArgs(args) {
+  const options = {
+    appRecordsPath: null,
+    outputPath: null,
+    recommend: false,
+    days: 30,
+    includeAllBuckets: false
+  };
+
+  for (let index = 0; index < args.length; index += 1) {
+    const arg = args[index];
+    if (arg === "--apps") {
+      options.appRecordsPath = args[index + 1];
+      index += 1;
+    } else if (arg === "--output" || arg === "-o") {
+      options.outputPath = args[index + 1];
+      index += 1;
+    } else if (arg === "--recommend") {
+      options.recommend = true;
+    } else if (arg === "--days") {
+      options.days = Number(args[index + 1]);
+      index += 1;
+    } else if (arg === "--include-all-buckets") {
+      options.includeAllBuckets = true;
+    } else {
+      throw new Error(`Unknown import activitywatch option: ${arg}`);
+    }
+  }
+
+  if (!Number.isFinite(options.days) || options.days <= 0) {
+    throw new Error("--days must be a positive number.");
+  }
+
+  if (options.appRecordsPath === undefined) {
+    throw new Error("Missing path after --apps.");
+  }
+
+  if (options.outputPath === undefined) {
+    throw new Error("Missing path after --output.");
+  }
+
+  return options;
+}
+
+async function writeJsonOrStdout(value, outputPath) {
+  const json = `${JSON.stringify(value, null, 2)}\n`;
+  if (outputPath) {
+    await writeFile(outputPath, json);
+    console.error(`Wrote ${Array.isArray(value) ? value.length : 1} records to ${outputPath}`);
   } else {
     process.stdout.write(json);
   }
@@ -99,5 +190,6 @@ function printUsage() {
   console.error(`Usage:
   node src/cli.js recommend <app-records.json>
   node src/cli.js <app-records.json>
-  node src/cli.js collect windows [--include-msix] [--include-winget] [--output records.json] [--recommend]`);
+  node src/cli.js collect windows [--include-msix] [--include-winget] [--output records.json] [--recommend]
+  node src/cli.js import activitywatch <export.json> [--apps app-records.json] [--output merged.json] [--recommend] [--days 30]`);
 }
