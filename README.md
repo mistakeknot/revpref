@@ -32,6 +32,18 @@ npm test
 npm run recommend
 ```
 
+## Task Tracking
+
+RevPref uses [bd / Beads](https://github.com/steveyegge/beads) for local-first task tracking.
+
+Useful commands:
+
+```bash
+bd ready
+bd list
+bd show <issue-id>
+```
+
 ## Product Thesis
 
 People are bad at remembering what they use. RevPref looks at revealed behavior instead:

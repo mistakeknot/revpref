@@ -2,6 +2,8 @@
   "database": "dolt",
   "backend": "dolt",
   "dolt_mode": "server",
+  "dolt_server_host": "127.0.0.1",
+  "dolt_server_port": 3307,
   "dolt_database": "revpref",
   "project_id": "420eb90c-452a-416a-be86-40221f443e14"
 }
