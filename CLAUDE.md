@@ -9,8 +9,6 @@ RevPref is a local-first app hygiene assistant. It turns installed-app inventory
 - `fixtures/` - Sample app records for CLI/demo runs.
 - `test/` - Node test suite.
 - `docs/` - Product, architecture, roadmap, persona, PRD, and CUJ docs.
-- `.beads/` - Beads task tracking.
-- `.clavain/` - Clavain project memory; `scratch/` is ignored.
 - `.interwatch/` - Documentation drift watch configuration.
 
 ## Git Workflow

@@ -31,5 +31,5 @@ Canonical documentation paths. Do not introduce compatibility aliases or fallbac
 
 - Do not use non-canonical documentation paths.
 - New docs, commands, and scripts must reference canonical paths only.
-- Keep local/private runtime files out of git, especially Beads credentials and `.clavain/scratch/`.
+- Keep local/private runtime files out of git, especially local tracker credentials and agent scratch directories.
 - Recommendation changes need tests.
