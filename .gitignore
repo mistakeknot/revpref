@@ -9,4 +9,7 @@ build/
 # Dolt database files (added by bd init)
 .dolt/
 *.db
-.clavain/scratch/
+
+# Agent working state (local only)
+.beads/
+.clavain/
