@@ -1,10 +1,10 @@
 {
   "buckets": {
-    "aw-watcher-window_mistakenot": {
-      "id": "aw-watcher-window_mistakenot",
+    "aw-watcher-window_example-host": {
+      "id": "aw-watcher-window_example-host",
       "type": "currentwindow",
       "client": "aw-watcher-window",
-      "hostname": "mistakenot",
+      "hostname": "example-host",
       "events": [
         {
           "timestamp": "2026-05-22T10:00:00.000Z",
@@ -40,11 +40,11 @@
         }
       ]
     },
-    "aw-watcher-afk_mistakenot": {
-      "id": "aw-watcher-afk_mistakenot",
+    "aw-watcher-afk_example-host": {
+      "id": "aw-watcher-afk_example-host",
       "type": "afkstatus",
       "client": "aw-watcher-afk",
-      "hostname": "mistakenot",
+      "hostname": "example-host",
       "events": [
         {
           "timestamp": "2026-05-22T10:00:00.000Z",
